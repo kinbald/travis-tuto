@@ -4,6 +4,13 @@ language: node_js
 services:
   - docker
 
-before_install:
+script:
+  - npm install
+
+
+after_success:
+  - pip install --user awscli
+  - eval $(aws ecr get-login --region eu-west-1 --no-include-email)
   - docker build -t kinbald/web-node .
-  - docker run --rm -p 3000:3000 kinbald/web-node
+  - docker tag kinbald/web-node 483761293063.dkr.ecr.eu-west-1.amazonaws.com/isentest
+  - docker push 483761293063.dkr.ecr.eu-west-1.amazonaws.com/isentest
