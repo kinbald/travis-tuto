@@ -1,1 +1,9 @@
 language: node_js
+
+
+services:
+  - docker
+
+before_install:
+  - docker build -t Kinbald/web-node .
+  - docker run --rm -p 3000:3000 Kinbald/web-node
