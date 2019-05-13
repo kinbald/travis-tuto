@@ -1,0 +1,19 @@
+{
+  "name": "travis-tuto",
+  "version": "1.0.0",
+  "description": "travis-tuto",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kinbald/travis-tuto.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kinbald/travis-tuto/issues"
+  },
+  "homepage": "https://github.com/kinbald/travis-tuto#readme"
+}
