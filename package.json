@@ -2,7 +2,7 @@
   "name": "travis-tuto",
   "version": "1.0.0",
   "description": "travis-tuto",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/kinbald/travis-tuto/issues"
   },
-  "homepage": "https://github.com/kinbald/travis-tuto#readme"
+  "homepage": "https://github.com/kinbald/travis-tuto#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
