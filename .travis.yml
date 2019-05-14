@@ -17,4 +17,4 @@ after_success:
   - docker tag kinbald/web-node $IMAGE_NAME
   - docker push $IMAGE_NAME
   - aws cloudformation deploy --template-file ./ecs-task.yaml --stack-name ISENStackDeploy --region eu-west-1 --parameter-override ImageName=$IMAGE_NAME
-  - aws cloudformation update-stack --template-body file://./ecs-stack.yaml --stack-name ISENStackDeploy --region eu-west-1 --parameters "ParameterKey=ImageName,ParameterValue=$IMAGE_NAME"
+  - aws cloudformation update-stack --template-body file://./ecs-task.yaml --stack-name ISENStackDeploy --region eu-west-1 --parameters "ParameterKey=ImageName,ParameterValue=$IMAGE_NAME"
