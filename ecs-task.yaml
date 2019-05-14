@@ -1,0 +1,31 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Deployment of Docker image
+
+Parameters:
+  ImageName:
+    Default: 483761293063.dkr.ecr.eu-west-1.amazonaws.com/isentest:latest
+    Description: Image contenant un serveur Node
+    Type: String
+
+Resources: 
+  taskdefinition: 
+    Type: AWS::ECS::TaskDefinition
+    Properties: 
+      ContainerDefinitions: 
+        - 
+          Name: "HelloWorld"
+          Image: 
+            Ref: ImageName
+          Cpu: "10"
+          Memory: "200"
+          PortMappings: 
+            - 
+              ContainerPort: 3000
+              HostPort: 0
+  WebApp: 
+    Type: AWS::ECS::Service
+    Properties: 
+      Cluster: "ecscluster"
+      DesiredCount: 1
+      TaskDefinition: 
+        Ref: "taskdefinition"
